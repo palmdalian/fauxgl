@@ -9,6 +9,7 @@ import (
 type Mesh struct {
 	Triangles []*Triangle
 	Lines     []*Line
+	Vertexes  []Vector
 	box       *Box
 }
 
@@ -17,15 +18,15 @@ func NewEmptyMesh() *Mesh {
 }
 
 func NewMesh(triangles []*Triangle, lines []*Line) *Mesh {
-	return &Mesh{triangles, lines, nil}
+	return &Mesh{Triangles: triangles, Lines: lines}
 }
 
 func NewTriangleMesh(triangles []*Triangle) *Mesh {
-	return &Mesh{triangles, nil, nil}
+	return &Mesh{Triangles: triangles}
 }
 
 func NewLineMesh(lines []*Line) *Mesh {
-	return &Mesh{nil, lines, nil}
+	return &Mesh{Lines: lines}
 }
 
 func (m *Mesh) dirty() {

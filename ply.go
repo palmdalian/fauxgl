@@ -3,6 +3,7 @@ package fauxgl
 import (
 	"bufio"
 	"encoding/binary"
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -178,13 +179,16 @@ func loadPlyAscii(file *os.File, elements []plyElement) (*Mesh, error) {
 			}
 		}
 	}
-	return NewTriangleMesh(triangles), nil
+	m := NewTriangleMesh(triangles)
+	m.Vertexes = vertexes
+	return m, nil
 }
 
 func loadPlyBinary(file *os.File, elements []plyElement, order binary.ByteOrder) (*Mesh, error) {
 	var vertexes []Vector
 	var triangles []*Triangle
 	for _, element := range elements {
+		fmt.Println(element)
 		for i := 0; i < element.count; i++ {
 			var vertex Vector
 			var points []Vector
@@ -232,7 +236,9 @@ func loadPlyBinary(file *os.File, elements []plyElement, order binary.ByteOrder)
 			}
 		}
 	}
-	return NewTriangleMesh(triangles), nil
+	m := NewTriangleMesh(triangles)
+	m.Vertexes = vertexes
+	return m, nil
 }
 
 func readPlyInt(file *os.File, order binary.ByteOrder, dataType plyDataType) (int, error) {
