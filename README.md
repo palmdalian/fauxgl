@@ -37,11 +37,11 @@ Rendering the Stanford Dragon shown above (871306 triangles) at 1920x1080px take
 
 ### Go Get
 
-    go get -u github.com/fogleman/fauxgl
+    go get -u github.com/palmdalian/fauxgl
 
 ### Go Run
 
-    cd go/src/github.com/fogleman/fauxgl
+    cd go/src/github.com/palmdalian/fauxgl
     go run examples/hello.go
 
 ### Go Doc
@@ -54,7 +54,7 @@ https://godoc.org/github.com/fogleman/fauxgl
 package main
 
 import (
-	. "github.com/fogleman/fauxgl"
+	. "github.com/palmdalian/fauxgl"
 	"github.com/nfnt/resize"
 )
 

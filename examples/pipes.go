@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"math/rand"
 
-	. "github.com/fogleman/fauxgl"
 	"github.com/nfnt/resize"
+	. "github.com/palmdalian/fauxgl"
 )
 
 const (

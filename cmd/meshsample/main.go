@@ -7,7 +7,7 @@ import (
 	"math/rand"
 
 	kingpin "github.com/alecthomas/kingpin/v2"
-	. "github.com/fogleman/fauxgl"
+	. "github.com/palmdalian/fauxgl"
 )
 
 var (

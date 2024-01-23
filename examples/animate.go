@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	. "github.com/fogleman/fauxgl"
 	"github.com/nfnt/resize"
+	. "github.com/palmdalian/fauxgl"
 )
 
 const (
